@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "CUKCAT",
+    "slug": "CUKCAT",
+    "privacy": "public",
+    "sdkVersion": "34.0.0",
+    "platforms": ["ios", "android", "web"],
+    "version": "0.1.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0C2E86"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.catstone.cukcat"
+    },
+    "android": {
+      "package": "com.catstone.cukcat",
+      "versionCode": 2
+    }
+  }
+}
