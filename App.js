@@ -1,12 +1,9 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Platform,
-} from 'react-native';
+import { StyleSheet, View, Platform } from 'react-native';
 import AppNavigator from './navigation/MainStackNav';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
+import Constants from 'expo-constants';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -23,9 +20,9 @@ export default class App extends React.Component {
     this.setState({ isReady: true });
   }
   render() {
-    // let marginTop = Platform.OS === 'android' ? 0 : Constants.statusBarHeight;
+    let marginTop = Platform.OS === 'android' ? 0 : Constants.statusBarHeight;
 
-    let marginTop = 0;
+    // let marginTop = 0;
     if (!this.state.isReady) {
       return <AppLoading />;
     }
@@ -36,7 +33,6 @@ export default class App extends React.Component {
     );
   }
 }
-Platform;
 
 const styles = StyleSheet.create({
   container: {

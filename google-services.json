@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "465781057469",
+    "firebase_url": "https://cukcat-aacfa.firebaseio.com",
+    "project_id": "cukcat-aacfa",
+    "storage_bucket": "cukcat-aacfa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465781057469:android:5ed405e8d87e00b38614d4",
+        "android_client_info": {
+          "package_name": "com.catstone.cukcat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465781057469-jrkfo0o2eupskjdpesu3ol6g77vra6f3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_TL1yCaPwf60B0mTdYFM8nh_H20AIzFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465781057469-jrkfo0o2eupskjdpesu3ol6g77vra6f3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

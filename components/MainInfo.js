@@ -47,7 +47,7 @@ export default class MainInfo extends React.Component {
         <View style={styles.dateCounterContainer}>
           <View style={styles.dateCounterRowTitle}>
             <FontAwesome
-              name="bus"
+              name="bell"
               size={Math.floor(width * 0.046)}
               color="#FFD400"
             ></FontAwesome>
@@ -113,9 +113,7 @@ export default class MainInfo extends React.Component {
           <View style={styles.quickRowTable}>
             <TouchableOpacity
               style={styles.quickLinkBtn}
-              onPress={() =>
-                this._handlePressButtonAsync(this.state.busUrl.fromStation)
-              }
+              onPress={() => this.props.openBusModal()}
             >
               <FontAwesome
                 name="bus"
@@ -131,7 +129,10 @@ export default class MainInfo extends React.Component {
                 버스정보
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.quickLinkBtn}>
+            <TouchableOpacity
+              style={styles.quickLinkBtn}
+              onPress={() => this.props.openFoodModal()}
+            >
               <MaterialCommunityIcons
                 name="food-fork-drink"
                 size={Math.floor(width * 0.09)}

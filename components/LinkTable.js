@@ -5,7 +5,8 @@ import {
   TouchableOpacity,
   Text,
   Dimensions,
-  ScrollView
+  ScrollView,
+  Platform
 } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
@@ -23,7 +24,14 @@ export default class LinkTable extends React.Component {
     super(props);
   }
   _handlePressButtonAsync = async url => {
-    await WebBrowser.openBrowserAsync(url);
+    await WebBrowser.openBrowserAsync(url, {
+      showInRecents: true
+    });
+    // if (Platform.OS == 'android') {
+    //   await WebBrowser.openBrowserAsync(url, { showInRecents: true });
+    // } else {
+    //   await WebBrowser.openBrowserAsync(url);
+    // }
   };
   rederRowTable(linkRow, index) {
     return (
@@ -53,24 +61,30 @@ export default class LinkTable extends React.Component {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         pagingEnabled={true}
-        snapToAlignment={'center'}
+        // snapToAlignment={'center'}
         snapToInterval={Math.floor(width * 0.825)}
-        decelerationRate={'fast'}
+        decelerationRate={0.85}
       >
         <View style={[styles.linkTableContainer]}>
-          <Text style={styles.linkTableTitle}>홈</Text>
+          <View style={styles.linkTableTitleContainer}>
+            <Text style={styles.linkTableTitle}>메인</Text>
+          </View>
           {mainLink.map((linkRow, index) => this.rederRowTable(linkRow, index))}
         </View>
 
         <View style={styles.linkTableContainer}>
-          <Text style={styles.linkTableTitle}>학사</Text>
+          <View style={styles.linkTableTitleContainer}>
+            <Text style={styles.linkTableTitle}>학사</Text>
+          </View>
           {haksaLink.map((linkRow, index) =>
             this.rederRowTable(linkRow, index)
           )}
         </View>
 
         <View style={styles.linkTableContainer}>
-          <Text style={styles.linkTableTitle}>도서관</Text>
+          <View style={styles.linkTableTitleContainer}>
+            <Text style={styles.linkTableTitle}>도서관</Text>
+          </View>
           {libraryLink.map((linkRow, index) =>
             this.rederRowTable(linkRow, index)
           )}
@@ -82,7 +96,9 @@ export default class LinkTable extends React.Component {
             { marginRight: Math.floor(width * 0.05) }
           ]}
         >
-          <Text style={styles.linkTableTitle}>기숙사</Text>
+          <View style={styles.linkTableTitleContainer}>
+            <Text style={styles.linkTableTitle}>기숙사</Text>
+          </View>
           {dormitoryLink.map((linkRow, index) =>
             this.rederRowTable(linkRow, index)
           )}
@@ -131,15 +147,17 @@ const styles = StyleSheet.create({
     color: '#656565',
     fontWeight: 'bold'
   },
+  linkTableTitleContainer: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#D3D3D3'
+  },
   linkTableTitle: {
-    fontSize: Math.floor(width * 0.05), //Done
+    fontSize: Math.floor(width * 0.04), //Done
     height: Math.floor(width * 0.13), //Done
     width: Math.floor(width * 0.7), //Done
     fontWeight: 'bold',
     padding: Math.floor(width * 0.028), //Done
     paddingTop: Math.floor(width * 0.05), //Done
-    color: '#6A6A6A',
-    borderBottomWidth: 1,
-    borderBottomColor: '#6A6A6A'
+    color: '#6A6A6A'
   }
 });

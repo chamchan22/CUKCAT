@@ -5,7 +5,7 @@
     "privacy": "public",
     "sdkVersion": "34.0.0",
     "platforms": ["ios", "android", "web"],
-    "version": "0.1.1",
+    "version": "0.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -19,11 +19,12 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.catstone.cukcat"
+      "bundleIdentifier": "com.catston.cukcat"
     },
     "android": {
       "package": "com.catstone.cukcat",
-      "versionCode": 2
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 3
     }
   }
 }

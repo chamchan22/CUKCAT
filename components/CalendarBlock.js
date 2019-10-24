@@ -28,6 +28,9 @@ export default class CalendarBlock extends React.Component {
         renderItem={this.renderItem.bind(this)}
         renderEmptyDate={this.renderEmptyDate.bind(this)}
         rowHasChanged={this.rowHasChanged.bind(this)}
+        theme={{
+          agendaKnobColor: '#b5b5b5'
+        }}
       />
     );
   }
@@ -42,14 +45,16 @@ export default class CalendarBlock extends React.Component {
   renderItem(item) {
     return (
       <View style={[styles.item, { height: 90 }]}>
-        <View style={{ flexDirection: 'row' }}>
-          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>학사일정</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+          <Text style={{ fontSize: 15, fontWeight: 'bold' }}>학사일정</Text>
           <Text
             style={{
-              color: 'red'
+              color: '#ff6a49',
+              fontSize: 13,
+              paddingLeft: 7
             }}
           >
-            PM 10:11
+            AM hh:mm
           </Text>
         </View>
         <Text>{item.title}</Text>
